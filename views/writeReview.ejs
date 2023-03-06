@@ -1,0 +1,108 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          <div class="mt-5">
+            <h2>Add a post</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                <label for="title" class="form-label">Sauce Brand</label>
+                <input type="text" class="form-control" id="title" name="brand">
+            </div>
+              <div class="mb-3">
+                  <label for="title" class="form-label">Sauce Name</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="caption" class="form-label">Caption</label>
+                <textarea class="form-control" id="caption" name="caption"></textarea> -->
+              </div>
+              <!-- <div class="mb-3">
+                  <label for="bottleInspection" class="form-label">Bottle Inspection</label>
+                  <textarea class="form-control" id="bottleInspection" name="bottleInspection"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="pourability" class="form-label">Pourability</label>
+                  <textarea class="form-control" id="pourability" name="pourability"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="smell" class="form-label">Smell</label>
+                  <textarea class="form-control" id="smell" name="smell"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="taste" class="form-label">Taste</label>
+                  <textarea class="form-control" id="taste" name="taste"></textarea>
+                </div> -->
+                <div class="mb-3">
+                  <label for="heat" class="form-label">Heat Rating</label>
+                  <select name="heat" id="heat">
+                    <option value="">--Please choose the heat level--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="thoughts" class="form-label">Review</label>
+                  <textarea class="form-control" id="thoughts" name="thoughts"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="rating" class="form-label">Overall Rating</label>
+                  <select name="rating" id="rating">
+                    <option value="">--Please choose the rating--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="purchase" class="form-label">Where to Purchase</label>
+                    <textarea class="form-control" id="purchase" name="purchase"></textarea>
+                  </div>
+                <div class="mb-3"> -->
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <!-- <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  --> 
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

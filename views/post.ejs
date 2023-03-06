@@ -1,0 +1,121 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <div class="col-6 mt-5 nav">
+        <!-- <a class="btn btn-primary" href="/profile">Return to Profile</a> |  -->
+        <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      </div>
+      <h2><%= post.brand %>'s <%= post.title %></h2>
+      <h3>By: <%= post.user.userName %></h3>
+      <div class="img-container">
+        <img class="img-fluid" src="<%= post.image%>" />
+        <div class="row justify-content-between">
+          <form
+            class="col-1"
+            action="/post/likePost/<%= post.id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-primary fa fa-heart" type="submit"> <%= post.likes %></button>
+          </form>
+          <form
+            class="col-1"
+          >
+            <button class="btn btn-primary fa fa-comment-dots comment-count"> <%= comments.length %></button>
+          </form>
+          <%if(post.user._id == user.id){ %>
+          <form
+            action="/post/deletePost/<%= post.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>
+          <%}%>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 mt-5 review">
+<!--       <h4>Bottle Inspection</h4>
+      <p><%= post.bottleInspection %></p>
+      <h4>Pourability</h4>
+      <p><%= post.pourability %></p>
+      <h4>Smell</h4>
+      <p><%= post.smell %></p>
+      <h4>Taste</h4>
+      <p><%= post.taste %></p>
+      <h4>Heat Rating</h4>
+      <p><%= post.heat %>/10</p>
+      <h4>Final Thoughts</h4>
+      <p><%= post.thoughts %></p>
+      <h4>Where to Purchase</h4>
+      <p><%= post.purchase %></p> -->
+      <!-- <h4><%= post.brand %>'s <%= post.title %></h4> -->
+
+      <h4>Heat Rating: <progress max="10" value="<%= post.heat %>"></progress></h4>
+      <h4>Review</h4>
+      <p><%= post.thoughts %></p>
+      <h4>Overall Rating</h4>
+      <p><%= post.rating %>/10</p>
+
+    </div>
+<!-- Add A Comment Box -->
+    <div class="mt-5 comments">
+      <h2>Add a comment</h2>
+      <form action="/comment/createComment/<%= post._id%>" method="POST">
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment: </label>
+            <input type="text" class="form-control" id="comment-input" name="comment">
+            <button type="submit" class="btn btn-primary" id="comment-submit">Submit</button>
+        </div>
+        
+      </form>
+
+      <!-- Comment Box -->
+      <ul class="comment-box">
+        <h2>Comments</h2>
+        <% for(var i = 0; i < comments.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5 comments-all">
+            <div class="comment-user">
+              <a><%= comments[i].user.userName %></a>
+            </div>
+            <div class="comment-text">
+              <a><%= comments[i].comment%></a>
+              <!-- Likes --> 
+            </div>
+            <div class="comment-likes">
+              <form
+                  class="comment-like-btn"
+                  action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT"
+                  method="POST"
+                >
+                  <button class="btn btn-primary fa fa-heart" type="submit"> <%= comments[i].likes %></button>
+                </form>
+                
+                <!-- Delete Comment -->
+              <%if(comments[i].user._id == user.id){ %>
+                <form
+                  action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE"
+                  method="POST"
+                  class="comment-trash-btn"
+                >
+                  <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                </form>
+            </div>
+            
+              <% } %>
+              
+          </li>
+        <% } %>
+      </ul>
+
+    </div>
+
+    <div class="col-6 mt-5 nav">
+      <a class="btn btn-primary" href="/profile">Return to Profile</a> | 
+      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

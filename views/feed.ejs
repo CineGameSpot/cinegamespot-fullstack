@@ -1,0 +1,98 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <!-- <div class="col-6 mt-5 nav">
+      
+    </div> -->
+    <aside class="sidebar">
+      <div>
+        <a href=""><i class="fa-solid fa-house"></i> My Profile</a>
+        <a href=""><i class="fa-solid fa-heart"></i> Liked Reviews</a>
+        <a href="/writeReview"><i class="fa-solid fa-pen-clip"></i> Write a Review</a>
+      </div>
+      <div>
+        <a href=""><i class="fa-solid fa-users-between-lines"></i> Top Reviews</a>
+        <a href=""><i class="fa-regular fa-clock"></i> Recent Reviews</a>
+      </div>
+      <div>
+        <a>Help</a>
+        <a>Send Feedback</a>
+      </div>
+      <div>
+        <a>About</a>
+        <a>Copyright</a>
+        <a>Contact Us</a>
+        <a>Developers</a>
+        <a>Terms</a>
+        <a>Privacy</a>
+        <a>Policy and Safety</a>
+      </div>
+      <a><i class="fa-regular fa-copyright"></i> 2023 Hot Sauce Central</a>
+
+    </aside>
+    <main>
+      <section>
+        
+        <h2>Top Reviews of All Time</h2>
+        <div class="feed">
+            <% for(var i = 0; i < 6; i++) {%>
+              <div class="feed-posts" href="/post/<%= posts[i]._id%>">
+                <div class="feedImgContainer" href="/post/<%= posts[i]._id%>">
+                  <img class="img-fluid" src="<%= posts[i].image%>">
+                </div>
+                <div class="feedDescription">
+                  <a class="topName"><%= posts[i].brand %>'s <%= posts[i].title %></a>
+                  <!-- <span class="btn btn-primary fa fa-heart" > <%= posts[i].likes %></span> -->
+                  <a><%= (posts[i].createdAt).toLocaleDateString('en-US') %></a>
+                </div>
+              </div>
+            <% } %>
+            </ul>
+        </div>
+      </section>
+      <section>
+        
+        <h2>Newest Reviews</h2>
+        <div class="feed">
+            <% for(var i = 0; i < 6; i++) {%>
+              <div class="feed-posts" href="/post/<%= posts[i]._id%>">
+                <div class="feedImgContainer" href="/post/<%= posts[i]._id%>">
+                  <img class="img-fluid" src="<%= posts[i].image%>">
+                </div>
+                <div class="feedDescription">
+                  <a class="topName"><%= posts[i].brand %>'s <%= posts[i].title %></a>
+                  <!-- <span class="btn btn-primary fa fa-heart" > <%= posts[i].likes %></span> -->
+                  <a><%= (posts[i].createdAt).toLocaleDateString('en-US') %></a>
+                </div>
+              </div>
+            <% } %>
+            </ul>
+        </div>
+      </section>
+      <!-- <section id="reviewListSection">
+        <ul id="reviewListTopBar" class="reviewList">
+          <li>Brand</li>
+          <li>Name</li>
+          <li>Rating</li>
+          <li>Heat</li>
+          <li>Likes</li>
+          <li>User</li>
+          <li>Date</li>
+        </ul>
+        <% for(var i = 5; i < posts.length; i++) {%>
+        <ul class="reviewList">
+            <li><a><%= posts[i].brand %></a></li>
+            <li><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></li>
+            <li><a><%= posts[i].rating %> / 10</a></li>
+            <li><a><div class="heatBar" style="--percent:<%= posts[i].heat * 10 %>"></div></a></li>
+            <li><a><%= posts[i].likes %></a></li>
+            <li><a><%= posts[i].user.userName %></a></li>
+            <li><a><%= (posts[i].createdAt).toLocaleDateString('en-US') %></a></li>
+          </ul>
+          <% } %>
+    </section> -->
+    </main>
+
+
+    
+  </div>  
+<%- include('partials/footer') -%>

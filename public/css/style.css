@@ -1,0 +1,234 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
+}
+span {
+    font-size: 2rem;
+}
+
+/* *************** HEADER *************** */
+header {
+    display: flex;
+    justify-content: flex-start;
+    background-color: black;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 20%;
+}
+#logo img {
+    width: 100%;
+    margin-left: .5rem;
+}
+
+.searchBarContainer {
+    border: 1px solid gray;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding: 1rem;
+}
+.searchBar {
+    margin: auto 0;
+    width: 90%;
+    border: none;
+    color: white;
+    background-color: black;
+}
+.searchBar:focus {
+    outline: none;
+}
+
+.fa-magnifying-glass, .fa-circle-user, .fa-bars {
+    font-size: 3rem;
+    height: 50%;
+    margin: auto 0;
+    color: #f1f1f1;
+}
+
+.fa-magnifying-glass {
+    font-size: 2rem;
+}
+
+.navContainer ul {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    padding: 0;
+}
+
+.navContainer ul li a {
+    color: white;
+    padding: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    list-style: none;
+    margin: 0 1rem;
+}
+.navContainer ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* *************** MAIN SECTION *************** */
+
+#frontTopNews {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    height:10vh;
+    padding: 25rem;
+}
+#frontTopNews span {
+    width: 100%;
+}
+
+.fa-person-digging {
+    font-size: 5rem;
+}
+
+
+
+
+
+
+/* *************** FOOTER *************** */
+
+
+footer {
+    padding: 1.5rem;
+    background: rgba(69, 69, 69, 0.708);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    font-size: 2rem;
+    color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+
+    bottom: 0;
+}
+
+#footerTopCenter {
+    width: 100%;
+}
+#footerTopCenter ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    padding: 0 10rem;
+}
+
+#footerTopCenter ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#footerDivTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#footerTopLeft, #footerTopMid {
+    width: 46%;
+    margin: 0 1%;
+}
+footer h4 {
+    margin-bottom: 1rem;
+}
+footer p, .copyright a {
+    font-size: 1.5rem;
+}
+
+#footerCenter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#socials {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.fa-brands {
+    color: rgba(243, 243, 243, 0.592);
+    font-size: 2.5rem;
+}
+
+#footerDivBottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 0 10px;
+}
+#footerBottomTop {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#footerBottomTop ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+}
+
+#footerBottomTop ul li {
+    border-right: 1px solid rgba(243, 243, 243, 0.592);
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+#footerBottomTop ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: rgba(243, 243, 243, 0.592);
+}
+
+.copyright {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* *************** MISC *************** */
